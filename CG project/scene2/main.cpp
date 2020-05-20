@@ -3,6 +3,11 @@
 #include<math.h>
 #define pi 3.142857
 
+float r11,r12,r13,r14,r15,r16,r17,r18=0;
+float r21,r22,r23,r24,r25,r26,r27,r28=0;
+float r31=1000,r32=1000,r33=1000,r34=1000,r35=1000,r36=1000,r37=1000,r38=1000;
+float r41=1000,r42=1000,r43=1000,r44=1000,r45=1000,r46=1000,r47=1000,r48=1000;
+void timer(int);
 void myInit (void)
 {
     // making background color black as first
@@ -389,106 +394,106 @@ void display()
     glEnd();
 
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(239,750);
+ glRasterPos2i(r11,750);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'R');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(249,750);
+ glRasterPos2i(r12,750);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'E');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(259,750);
+ glRasterPos2i(r13,750);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'A');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(269,750);
+ glRasterPos2i(r14,750);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'C');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(281,750);
+ glRasterPos2i(r15,750);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'T');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(289,750);
+ glRasterPos2i(r16,750);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'O');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(302,750);
+ glRasterPos2i(r17,750);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'R');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(314,750);
+ glRasterPos2i(r18,750);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'1');
 
 
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(218,200);
+ glRasterPos2i(r31,200);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'R');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(228,200);
+ glRasterPos2i(r32,200);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'E');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(238,200);
+ glRasterPos2i(r33,200);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'A');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(248,200);
+ glRasterPos2i(r34,200);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'C');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(258,200);
+ glRasterPos2i(r35,200);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'T');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(268,200);
+ glRasterPos2i(r36,200);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'O');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(281,200);
+ glRasterPos2i(r37,200);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'R');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(292,200);
+ glRasterPos2i(r38,200);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'3');
 
 
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(557,100);
+ glRasterPos2i(r41,100);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'R');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(567,100);
+ glRasterPos2i(r42,100);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'E');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(577,100);
+ glRasterPos2i(r43,100);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'A');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(587,100);
+ glRasterPos2i(r44,100);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'C');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(597,100);
+ glRasterPos2i(r45,100);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'T');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(607,100);
+ glRasterPos2i(r46,100);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'O');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2f(619.5,100);
+ glRasterPos2f(r47,100);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'R');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(631,100);
+ glRasterPos2i(r48,100);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'4');
 
 
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(140,300);
+ glRasterPos2i(r21,300);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'R');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(150,300);
+ glRasterPos2i(r22,300);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'E');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(160,300);
+ glRasterPos2i(r23,300);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'A');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(170,300);
+ glRasterPos2i(r24,300);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'C');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(180,300);
+ glRasterPos2i(r25,300);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'T');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(188,300);
+ glRasterPos2i(r26,300);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'O');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(200,300);
+ glRasterPos2i(r27,300);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'R');
  glColor3f(0.0,0.0,0.0);
- glRasterPos2i(212,300);
+ glRasterPos2i(r28,300);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,'2');
 
 
@@ -533,9 +538,8 @@ void display()
  glRasterPos2i(592,950);
  glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,'Y');
 
-
-    glBegin(GL_POINTS);
     glPointSize(5);
+    glBegin(GL_POINTS);
     glColor3f(0.0,0.0,0.0);
     glVertex2f(210,590);
     glEnd();
@@ -558,13 +562,87 @@ void display()
     glVertex2f(290,340);
     glEnd();
 
- glFlush();
+ glutSwapBuffers();
+}
+
+void timer(int)
+{
+    glutPostRedisplay();
+    glutTimerFunc(1000/1000,timer,0);
+
+    if(r11<=239)
+        r11+=0.15;
+    if(r12<=249)
+        r12+=0.15;
+    if(r13<=259)
+        r13+=0.15;
+    if(r14<=269)
+        r14+=0.15;
+    if(r15<=281)
+        r15+=0.15;
+    if(r16<=289)
+        r16+=0.15;
+    if(r17<=302)
+        r17+=0.15;
+    if(r18<=314)
+        r18+=0.15;
+
+    if(r21<=140)
+        r21+=0.15;
+    if(r22<=150)
+        r22+=0.15;
+    if(r23<=160)
+        r23+=0.15;
+    if(r24<=170)
+        r24+=0.15;
+    if(r25<=180)
+        r25+=0.15;
+    if(r26<=188)
+        r26+=0.15;
+    if(r27<=200)
+        r27+=0.15;
+    if(r28<=212)
+        r28+=0.15;
+
+    if(r31>=218)
+        r31-=0.15;
+    if(r32>=228)
+        r32-=0.15;
+    if(r33>=238)
+        r33-=0.15;
+    if(r34>=248)
+        r34-=0.15;
+    if(r35>=258)
+        r35-=0.15;
+    if(r36>=268)
+        r36-=0.15;
+    if(r37>=281)
+        r37-=0.15;
+    if(r38>=292)
+        r38-=0.15;
+
+    if(r41>=557)
+        r41-=0.15;
+    if(r42>=567)
+        r42-=0.15;
+    if(r43>=577)
+        r43-=0.15;
+    if(r44>=587)
+        r44-=0.15;
+    if(r45>=597)
+        r45-=0.15;
+    if(r46>=607)
+        r46-=0.15;
+    if(r47>=619)
+        r47-=0.15;
+    if(r48>=631)
+        r48-=0.15;
 }
 
 int main (int argc, char** argv)
 {
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DOUBLE);
 
     // giving window size in X- and Y- direction
     glutInitWindowSize(1366,648);
@@ -575,5 +653,6 @@ int main (int argc, char** argv)
     myInit();
 
     glutDisplayFunc(display);
+    glutTimerFunc(0,timer,0);
     glutMainLoop();
 }

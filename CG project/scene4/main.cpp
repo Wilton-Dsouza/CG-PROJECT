@@ -1,8 +1,19 @@
 #include<stdio.h>
 #include<GL/glut.h>
 #include<math.h>
-#define pi 3.142857
-
+float f5=0,f6=800;
+float s11=400,s12=400,s13=400,s14=400,s15=400,s16=400;
+float s21=700,s22=700,s23=700,s24=700,s25=700,s26=700;
+float s31=640,s32=640,s33=640,s34=640,s35=640,s36=640;
+float s41=700,s42=700,s43=700,s44=700,s45=700,s46=700;
+int state=1;
+float w11=260,w12=420;
+float w21=200,w22=200;
+float w31=480,w32=650;
+float w41=200,w42=200;
+float o1=325,o2=375,o3=450,o4=550,o5=600,o6=660;
+float p1=290,p2=375,p3=465,p4=600,p5=600,p6=690;
+void timer(int);
 // function to initialize
 void myInit (void)
 {
@@ -23,6 +34,51 @@ void myInit (void)
 
 void display()
 {
+    glClear(GL_COLOR_BUFFER_BIT);
+    {
+    //CLOUD(RIGHT)
+ glBegin(GL_POLYGON);
+    for (int i =0; i < 360;i++)
+    {
+        float theta=0;
+        theta=i*3.142/180;
+        glColor3f(1.0,1.0,1.0);
+        glVertex2f(f6+60*cos(theta),900+60*sin(theta));
+    }
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    for (int i =0; i < 360;i++)
+    {
+        float theta=0;
+        theta=i*3.142/180;
+        glColor3f(1.0,1.0,1.0);
+        glVertex2f(f6+40*cos(theta),900+80*sin(theta));
+    }
+    glEnd();
+}
+{
+    //CLOUD(LEFT)
+    glBegin(GL_POLYGON);
+    for (int i =0; i < 360;i++)
+    {
+        float theta=0;
+        theta=i*3.142/180;
+        glColor3f(1.0,1.0,1.0);
+        glVertex2f(f5+60*cos(theta),900+60*sin(theta));
+    }
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    for (int i =0; i < 360;i++)
+    {
+        float theta=0;
+        theta=i*3.142/180;
+        glColor3f(1.0,1.0,1.0);
+        glVertex2f(f5+40*cos(theta),900+80*sin(theta));
+    }
+    glEnd();
+}
     {                   //LEFT HAND SMOKE CLOUDS
     glBegin(GL_POLYGON);
     for (int i =0; i < 360;i++)
@@ -31,7 +87,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.6,0.6,0.6);
-        glVertex2f(400+100*cos(theta),700+100*sin(theta));
+        glVertex2f(s11+100*cos(theta),s21+100*sin(theta));
     }
     glEnd();
 
@@ -42,7 +98,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.6,0.6,0.6);
-        glVertex2f(350+100*cos(theta),790+100*sin(theta));
+        glVertex2f(s12+100*cos(theta),s22+100*sin(theta));
     }
     glEnd();
 
@@ -53,7 +109,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.6,0.6,0.6);
-        glVertex2f(360+100*cos(theta),790+100*sin(theta));
+        glVertex2f(s13+100*cos(theta),s23+100*sin(theta));
     }
     glEnd();
 
@@ -64,7 +120,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.6,0.6,0.6);
-        glVertex2f(300+100*cos(theta),880+100*sin(theta));
+        glVertex2f(s14+100*cos(theta),s24+100*sin(theta));
     }
     glEnd();
 
@@ -75,7 +131,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.6,0.6,0.6);
-        glVertex2f(310+100*cos(theta),880+100*sin(theta));
+        glVertex2f(s15+100*cos(theta),s25+100*sin(theta));
     }
     glEnd();
 
@@ -86,7 +142,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.6,0.6,0.6);
-        glVertex2f(250+100*cos(theta),970+100*sin(theta));
+        glVertex2f(s16+100*cos(theta),s26+100*sin(theta));
     }
     glEnd();
 
@@ -98,7 +154,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.6,0.6,0.6);
-        glVertex2f(640+100*cos(theta),700+100*sin(theta));
+        glVertex2f(s31+100*cos(theta),s41+100*sin(theta));
     }
     glEnd();
 
@@ -109,7 +165,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.6,0.6,0.6);
-        glVertex2f(590+100*cos(theta),790+100*sin(theta));
+        glVertex2f(s32+100*cos(theta),s42+100*sin(theta));
     }
     glEnd();
 
@@ -120,7 +176,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.6,0.6,0.6);
-        glVertex2f(610+100*cos(theta),790+100*sin(theta));
+        glVertex2f(s33+100*cos(theta),s43+100*sin(theta));
     }
     glEnd();
 
@@ -131,7 +187,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.6,0.6,0.6);
-        glVertex2f(550+100*cos(theta),880+100*sin(theta));
+        glVertex2f(s34+100*cos(theta),s44+100*sin(theta));
     }
     glEnd();
 
@@ -142,7 +198,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.6,0.6,0.6);
-        glVertex2f(550+100*cos(theta),880+100*sin(theta));
+        glVertex2f(s35+100*cos(theta),s45+100*sin(theta));
     }
     glEnd();
 
@@ -153,7 +209,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.6,0.6,0.6);
-        glVertex2f(490+100*cos(theta),970+100*sin(theta));
+        glVertex2f(s36+100*cos(theta),s46+100*sin(theta));
     }
     glEnd();
     }
@@ -206,7 +262,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(1.0,0.56,0.0);
-        glVertex2f(325+100*cos(theta),515+100*sin(theta));
+        glVertex2f(o1+100*cos(theta),515+100*sin(theta));
     }
     glEnd();
 
@@ -217,7 +273,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(1.0,0.56,0.0);
-        glVertex2f(375+100*cos(theta),615+100*sin(theta));
+        glVertex2f(o2+100*cos(theta),615+100*sin(theta));
     }
     glEnd();
 
@@ -228,7 +284,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(1.0,0.56,0.0);
-        glVertex2f(450+100*cos(theta),515+100*sin(theta));
+        glVertex2f(o3+100*cos(theta),515+100*sin(theta));
     }
     glEnd();
 
@@ -239,7 +295,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(1.0,0.56,0.0);
-        glVertex2f(550+100*cos(theta),515+100*sin(theta));
+        glVertex2f(o4+100*cos(theta),515+100*sin(theta));
     }
     glEnd();
 
@@ -250,7 +306,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(1.0,0.56,0.0);
-        glVertex2f(600+100*cos(theta),615+100*sin(theta));
+        glVertex2f(o5+100*cos(theta),615+100*sin(theta));
     }
     glEnd();
 
@@ -261,7 +317,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(1.0,0.56,0.0);
-        glVertex2f(660+100*cos(theta),515+100*sin(theta));
+        glVertex2f(o6+100*cos(theta),515+100*sin(theta));
     }
     glEnd();
 
@@ -273,7 +329,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.99,0.85,0.08);
-        glVertex2f(290+60*cos(theta),520+60*sin(theta));
+        glVertex2f(p1+60*cos(theta),520+60*sin(theta));
     }
     glEnd();
 
@@ -284,7 +340,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.99,0.85,0.08);
-        glVertex2f(375+96*cos(theta),605+96*sin(theta));
+        glVertex2f(p2+96*cos(theta),605+96*sin(theta));
     }
     glEnd();
 
@@ -295,7 +351,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.99,0.85,0.08);
-        glVertex2f(465+65*cos(theta),535+65*sin(theta));
+        glVertex2f(p3+65*cos(theta),535+65*sin(theta));
     }
     glEnd();
     glBegin(GL_POLYGON); // 4
@@ -305,7 +361,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.99,0.85,0.08);
-        glVertex2f(600+96*cos(theta),565+96*sin(theta));
+        glVertex2f(p4+96*cos(theta),565+96*sin(theta));
     }
     glEnd();
 
@@ -316,7 +372,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.99,0.85,0.08);
-        glVertex2f(600+96*cos(theta),611+96*sin(theta));
+        glVertex2f(p5+96*cos(theta),611+96*sin(theta));
     }
     glEnd();
 
@@ -327,7 +383,7 @@ void display()
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.99,0.85,0.08);
-        glVertex2f(690+65*cos(theta),530+65*sin(theta));
+        glVertex2f(p6+65*cos(theta),530+65*sin(theta));
     }
     glEnd();
 
@@ -618,50 +674,7 @@ void display()
  glRasterPos2i(939,273);
  glutBitmapCharacter(GLUT_BITMAP_HELVETICA_10,'R');
 }
-{
-    //CLOUD(RIGHT)
- glBegin(GL_POLYGON);
-    for (int i =0; i < 360;i++)
-    {
-        float theta=0;
-        theta=i*3.142/180;
-        glColor3f(1.0,1.0,1.0);
-        glVertex2f(900+60*cos(theta),900+60*sin(theta));
-    }
-    glEnd();
 
-    glBegin(GL_POLYGON);
-    for (int i =0; i < 360;i++)
-    {
-        float theta=0;
-        theta=i*3.142/180;
-        glColor3f(1.0,1.0,1.0);
-        glVertex2f(900+40*cos(theta),900+80*sin(theta));
-    }
-    glEnd();
-}
-{
-    //CLOUD(LEFT)
-    glBegin(GL_POLYGON);
-    for (int i =0; i < 360;i++)
-    {
-        float theta=0;
-        theta=i*3.142/180;
-        glColor3f(1.0,1.0,1.0);
-        glVertex2f(100+60*cos(theta),900+60*sin(theta));
-    }
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    for (int i =0; i < 360;i++)
-    {
-        float theta=0;
-        theta=i*3.142/180;
-        glColor3f(1.0,1.0,1.0);
-        glVertex2f(100+40*cos(theta),900+80*sin(theta));
-    }
-    glEnd();
-}
 {//BUSHES
     glBegin(GL_POLYGON);
     for (int i =0; i < 180;i++)
@@ -769,7 +782,7 @@ glBegin(GL_POLYGON);
         float theta=0;
         theta=i*3.142/180;
         glColor3f(1.0,0.56,0.0);
-        glVertex2f(325+100*cos(theta),150+100*sin(theta));
+        glVertex2f(o1+100*cos(theta),150+100*sin(theta));
     }
     glEnd();
 
@@ -780,7 +793,7 @@ glBegin(GL_POLYGON);
         float theta=0;
         theta=i*3.142/180;
         glColor3f(1.0,0.56,0.0);
-        glVertex2f(375+100*cos(theta),250+100*sin(theta));
+        glVertex2f(o2+100*cos(theta),250+100*sin(theta));
     }
     glEnd();
 
@@ -791,7 +804,7 @@ glBegin(GL_POLYGON);
         float theta=0;
         theta=i*3.142/180;
         glColor3f(1.0,0.56,0.0);
-        glVertex2f(450+100*cos(theta),150+100*sin(theta));
+        glVertex2f(o3+100*cos(theta),150+100*sin(theta));
     }
     glEnd();
 
@@ -802,7 +815,7 @@ glBegin(GL_POLYGON);
         float theta=0;
         theta=i*3.142/180;
         glColor3f(1.0,0.56,0.0);
-        glVertex2f(550+100*cos(theta),150+100*sin(theta));
+        glVertex2f(o4+100*cos(theta),150+100*sin(theta));
     }
     glEnd();
 
@@ -813,7 +826,7 @@ glBegin(GL_POLYGON);
         float theta=0;
         theta=i*3.142/180;
         glColor3f(1.0,0.56,0.0);
-        glVertex2f(600+100*cos(theta),250+100*sin(theta));
+        glVertex2f(o5+100*cos(theta),250+100*sin(theta));
     }
     glEnd();
 
@@ -824,7 +837,7 @@ glBegin(GL_POLYGON);
         float theta=0;
         theta=i*3.142/180;
         glColor3f(1.0,0.56,0.0);
-        glVertex2f(660+100*cos(theta),150+100*sin(theta));
+        glVertex2f(o6+100*cos(theta),150+100*sin(theta));
     }
     glEnd();
 
@@ -836,7 +849,7 @@ glBegin(GL_POLYGON);
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.99,0.85,0.08);
-        glVertex2f(290+60*cos(theta),155+60*sin(theta));
+        glVertex2f(p1+60*cos(theta),155+60*sin(theta));
     }
     glEnd();
 
@@ -847,7 +860,7 @@ glBegin(GL_POLYGON);
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.99,0.85,0.08);
-        glVertex2f(375+96*cos(theta),240+96*sin(theta));
+        glVertex2f(p2+96*cos(theta),240+96*sin(theta));
     }
     glEnd();
 
@@ -858,7 +871,7 @@ glBegin(GL_POLYGON);
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.99,0.85,0.08);
-        glVertex2f(465+65*cos(theta),175+65*sin(theta));
+        glVertex2f(p3+65*cos(theta),175+65*sin(theta));
     }
     glEnd();
     glBegin(GL_POLYGON); // 4
@@ -868,7 +881,7 @@ glBegin(GL_POLYGON);
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.99,0.85,0.08);
-        glVertex2f(600+96*cos(theta),200+96*sin(theta));
+        glVertex2f(p4+96*cos(theta),200+96*sin(theta));
     }
     glEnd();
 
@@ -879,7 +892,7 @@ glBegin(GL_POLYGON);
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.99,0.85,0.08);
-        glVertex2f(600+96*cos(theta),246+96*sin(theta));
+        glVertex2f(p5+96*cos(theta),246+96*sin(theta));
     }
     glEnd();
 
@@ -890,7 +903,7 @@ glBegin(GL_POLYGON);
         float theta=0;
         theta=i*3.142/180;
         glColor3f(0.99,0.85,0.08);
-        glVertex2f(690+65*cos(theta),165+65*sin(theta));
+        glVertex2f(p6+65*cos(theta),165+65*sin(theta));
     }
     glEnd();
 
@@ -1034,19 +1047,19 @@ glBegin(GL_POLYGON);
         glEnd();
 
         glBegin(GL_POLYGON); //WATER(LEFT)
-        glColor3f(0.61,0.82,0.85);
+        glColor3f(0.61,0.72,0.85);
         glVertex2f(305,80);
         glVertex2f(310,80);
-        glVertex2f(420,200);
-        glVertex2f(260,200);
+        glVertex2f(w12,w21);
+        glVertex2f(w11,w22);
         glEnd();
 
         glBegin(GL_POLYGON); //WATER(RIGHT)
-        glColor3f(0.61,0.82,0.85);
-        glVertex2f(585,80);
+        glColor3f(0.61,0.72,0.85);
         glVertex2f(589,80);
-        glVertex2f(650,200);
-        glVertex2f(480,200);
+        glVertex2f(585,80);
+        glVertex2f(w31,w42);
+        glVertex2f(w32,w41);
         glEnd();
 }
 {
@@ -1133,13 +1146,173 @@ glBegin(GL_POLYGON);
 
 
 }
-    glFlush();
+    glutSwapBuffers();
+}
+
+void timer(int)
+{
+    glutTimerFunc(1000/100,timer,0);
+    glutPostRedisplay();
+
+    if(f5<=550)
+        f5+=0.2;
+    if(f6<=1500)
+        f6+=0.2;
+
+    if(s11>=400)
+        s11-=0.2;
+    if(s21<=700)
+        s21+=0.2;
+    if(s12>=350)
+        s12-=0.2;
+    if(s22<=790)
+        s22+=0.2;
+    if(s13>=360)
+        s13-=0.2;
+    if(s23<=790)
+        s23+=0.2;
+    if(s14>=300)
+        s14-=0.2;
+    if(s24<=880)
+        s24+=0.2;
+    if(s15>=310)
+        s15-=0.2;
+    if(s25<=880)
+        s25+=0.2;
+    if(s16>=250)
+        s16-=0.2;
+    if(s26<=970)
+        s26+=0.2;
+
+    if(s31>=640)
+        s31-=0.2;
+    if(s41<=700)
+        s41+=0.2;
+    if(s32>=590)
+        s32-=0.2;
+    if(s42<=790)
+        s42+=0.2;
+    if(s33>=610)
+        s33-=0.2;
+    if(s43<=790)
+        s43+=0.2;
+    if(s34>=550)
+        s34-=0.2;
+    if(s44<=880)
+        s44+=0.2;
+    if(s35>=550)
+        s35-=0.2;
+    if(s45<=880)
+        s45+=0.2;
+    if(s36>=490)
+        s36-=0.2;
+    if(s46<=970)
+        s46+=0.2;
+
+    switch(state)
+    {
+        case 1: if(w11>=220)
+                    w11-=0.58;
+                if(w22>=180)
+                    w22-=0.58;
+                if(w12>=400)
+                    w12-=0.58;
+                if(w21<=220)
+                    w21+=0.58;
+
+                if(w31>=440)
+                    w31-=0.58;
+                if(w42>=180)
+                    w42-=0.58;
+                if(w32>=630)
+                    w32-=0.58;
+                if(w41<=220)
+                    w41+=0.58;
+
+                if(o1>=300)
+                    o1-=0.15;
+                if(o2>=350)
+                    o2-=0.15;
+                if(o3>=425)
+                    o3-=0.15;
+                if(o4>=525)
+                    o4-=0.15;
+                if(o5>=575)
+                    o5-=0.15;
+                if(o6>=645)
+                    o6-=0.15;
+
+                if(p1>=275)
+                    p1-=0.15;
+                if(p2>=350)
+                    p2-=0.15;
+                if(p3>=440)
+                    p3-=0.15;
+                if(p4>=575)
+                    p4-=0.15;
+                if(p5>=575)
+                    p5-=0.15;
+                if(p6>=665)
+                    p6-=0.15;
+
+                else
+                    state=-1;
+                break;
+        case -1: if(w11<=240)
+                    w11+=0.58;
+                if(w22>=210)
+                    w22-=0.58;
+                if(w12<=460)
+                    w12+=0.58;
+                if(w21>=200)
+                    w21-=0.58;
+
+                if(w31<=500)
+                    w31+=0.58;
+                if(w42>=210)
+                    w42-=0.58;
+                if(w32<=670)
+                    w32+=0.58;
+                if(w41>=200)
+                    w41-=0.58;
+
+                if(o1<=365)
+                    o1+=0.2;
+                if(o2<=405)
+                    o2+=0.2;
+                if(o3<=480)
+                    o3+=0.2;
+                if(o4<=580)
+                    o4+=0.2;
+                if(o5<=630)
+                    o5+=0.2;
+                if(o6<=690)
+                    o6+=0.2;
+
+                 if(p1<=310)
+                    p1+=0.15;
+                if(p2<=395)
+                    p2+=0.15;
+                if(p3<=485)
+                    p3+=0.15;
+                if(p4<=620)
+                    p4+=0.15;
+                if(p5<=620)
+                    p5+=0.15;
+                if(p6<=710)
+                    p6+=0.15;
+
+                else
+                    state=1;
+                break;
+
+    }
 }
 
 int main (int argc, char** argv)
 {
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DOUBLE);
 
     // giving window size in X- and Y- direction
     glutInitWindowSize(1366,648);
@@ -1150,5 +1323,6 @@ int main (int argc, char** argv)
     myInit();
 
     glutDisplayFunc(display);
+    glutTimerFunc(0,timer,0);
     glutMainLoop();
 }

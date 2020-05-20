@@ -3,6 +3,7 @@
 #include<math.h>
 #define pi 3.142857
 
+void timer(int);
 // function to initialize
 void myInit (void)
 {
@@ -20,12 +21,12 @@ void myInit (void)
     // setting window dimension in X- and Y- direction
     gluOrtho2D(0, 1000, 0, 1000);
 }
+float x1,x2,x3,x4,x5,x6,x7,x8,x9=0.0;
 
 void display ()
 {
     glClear(GL_COLOR_BUFFER_BIT);
     glBegin(GL_POLYGON);
-    glColor3f(0,0.9,0.6);
     float theta=0;
 {  //SKY CLOUDS
 
@@ -373,27 +374,27 @@ void display ()
 }
 
  glColor3f(0.2,0.2,0.2);
- glRasterPos2i(410,700);
+ glRasterPos2i(x1,700);
  glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,'C');
  glColor3f(0.2,0.2,0.2);
- glRasterPos2i(430,700);
+ glRasterPos2i(x2,700);
  glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,'H');
  glColor3f(0.2,0.2,0.2);
- glRasterPos2i(450,700);
+ glRasterPos2i(x3,700);
  glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,'E');
  glColor3f(0.2,0.2,0.2);
- glRasterPos2i(470,700);
+ glRasterPos2i(x4,700);
  glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,'R');
  glColor3f(0.2,0.2,0.2);
- glRasterPos2i(490,700);
+ glRasterPos2i(x5,700);
  glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,'N');
- glRasterPos2i(510,700);
+ glRasterPos2i(x6,700);
  glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,'O');
- glRasterPos2i(530,700);
+ glRasterPos2i(x7,700);
  glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,'B');
- glRasterPos2i(550,700);
+ glRasterPos2i(x8,700);
  glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,'Y');
- glRasterPos2i(570,700);
+ glRasterPos2i(x9,700);
  glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,'L');
  glLineWidth(15);
  glColor3f(1.0,0.0,0.0);
@@ -517,13 +518,39 @@ void display ()
  glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_10,'N');
  glLineWidth(15);
  glColor3f(1.0,0.0,0.0);
-  glFlush();
+  glutSwapBuffers();
+}
+
+void timer(int)
+{
+    glutPostRedisplay();
+    glutTimerFunc(1000/1000,timer,0);
+
+    if(x1<=410)
+        x1+=0.15;
+    if(x2<=430)
+        x2+=0.15;
+    if(x3<=450)
+        x3+=0.15;
+    if(x4<=470)
+        x4+=0.15;
+    if(x5<=490)
+        x5+=0.15;
+    if(x6<=510)
+        x6+=0.15;
+    if(x7<=530)
+        x7+=0.15;
+    if(x8<=550)
+        x8+=0.15;
+    if(x9<=570)
+        x9+=0.15;
+
 }
 
 int main (int argc, char** argv)
 {
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DOUBLE);
 
     // giving window size in X- and Y- direction
     glutInitWindowSize(1366,648);
@@ -534,5 +561,6 @@ int main (int argc, char** argv)
     myInit();
 
     glutDisplayFunc(display);
+    glutTimerFunc(0,timer,0);
     glutMainLoop();
 }

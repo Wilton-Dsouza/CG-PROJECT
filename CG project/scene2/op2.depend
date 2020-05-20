@@ -241,7 +241,7 @@
 1341006774 c:\program files (x86)\codeblocks\mingw\include\math.h
 	<_mingw.h>
 
-1585226870 source:c:\users\wenzil\documents\cg project\scene2\main.cpp
+1589626115 source:c:\users\wenzil\documents\cg project\scene2\main.cpp
 	<stdio.h>
 	<GL/glut.h>
 	<math.h>

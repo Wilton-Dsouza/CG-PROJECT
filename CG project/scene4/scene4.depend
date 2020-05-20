@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1586244382 source:c:\users\wenzil\documents\cg project\scene4\main.cpp
+1589986860 source:c:\users\wenzil\documents\cg project\scene4\main.cpp
 	<stdio.h>
 	<GL/glut.h>
 	<math.h>

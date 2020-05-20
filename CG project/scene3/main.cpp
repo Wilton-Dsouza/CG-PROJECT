@@ -3,6 +3,13 @@
 #include<math.h>
 #define pi 3.142857
 
+
+float y11,y41=0;
+float y2=300,y3=300;
+float y21=0,y22=0,y23=0,y24=0,y25=0,y26=0,y27=0,y28=0;
+
+
+void timer(int);
 // function to initialize
 void myInit (void)
 {
@@ -23,6 +30,97 @@ void myInit (void)
 
 void display()
 {
+    glClear(GL_COLOR_BUFFER_BIT);
+    {
+    //MUSHROOM CLOUD
+    glBegin(GL_POLYGON);
+    glColor3f(0.98,0.52,0.09);
+    glVertex2f(400,y11);
+    glVertex2f(400,y2);
+    glVertex2f(530,y3);
+    glVertex2f(530,y41);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    for (int i =0; i < 360;i++)
+    {
+        float theta=0;
+        theta=i*3.142/180;
+        glColor3f(1.0,0.81,0.0);
+        glVertex2f(380+60*cos(theta),y21+60*sin(theta));
+    }
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    for (int i =0; i < 360;i++)
+    {
+        float theta=0;
+        theta=i*3.142/180;
+        glColor3f(1.0,0.81,0.0);
+        glVertex2f(460+60*cos(theta),y22+60*sin(theta));
+    }
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    for (int i =0; i < 360;i++)
+    {
+        float theta=0;
+        theta=i*3.142/180;
+        glColor3f(1.0,0.81,0.0);
+        glVertex2f(540+60*cos(theta),y23+60*sin(theta));
+    }
+    glEnd();
+
+    glBegin(GL_POLYGON);
+     for (int i =0; i < 360;i++)
+    {
+        float theta=0;
+        theta=i*3.142/180;
+        glColor3f(1.0,0.81,0.0);
+        glVertex2f(380+60*cos(theta),y24+60*sin(theta));
+    }
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    for (int i =0; i < 360;i++)
+    {
+        float theta=0;
+        theta=i*3.142/180;
+        glColor3f(1.0,0.81,0.0);
+        glVertex2f(460+60*cos(theta),y25+60*sin(theta));
+    }
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    for (int i =0; i < 360;i++)
+    {
+        float theta=0;
+        theta=i*3.142/180;
+        glColor3f(1.0,0.81,0.0);
+        glVertex2f(540+60*cos(theta),y26+60*sin(theta));
+    }
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    for (int i =0; i < 360;i++)
+    {
+        float theta=0;
+        theta=i*3.142/180;
+        glColor3f(1.0,0.81,0.0);
+        glVertex2f(350+60*cos(theta),y27+60*sin(theta));
+    }
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    for (int i =0; i < 360;i++)
+    {
+        float theta=0;
+        theta=i*3.142/180;
+        glColor3f(1.0,0.81,0.0);
+        glVertex2f(570+60*cos(theta),y28+60*sin(theta));
+    }
+    glEnd();
+}
     glBegin(GL_POLYGON); //FIELD LAYER 1
     glColor3f(0.21,0.98,0.11);
     glVertex2f(0,0);
@@ -422,96 +520,7 @@ void display()
     }
     glEnd();
 }
-{
-    //MUSHROOM CLOUD
-    glBegin(GL_POLYGON);
-    glColor3f(0.98,0.52,0.09);
-    glVertex2f(400,515);
-    glVertex2f(400,815);
-    glVertex2f(530,815);
-    glVertex2f(530,515);
-    glEnd();
 
-    glBegin(GL_POLYGON);
-    for (int i =0; i < 360;i++)
-    {
-        float theta=0;
-        theta=i*3.142/180;
-        glColor3f(1.0,0.81,0.0);
-        glVertex2f(380+60*cos(theta),820+60*sin(theta));
-    }
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    for (int i =0; i < 360;i++)
-    {
-        float theta=0;
-        theta=i*3.142/180;
-        glColor3f(1.0,0.81,0.0);
-        glVertex2f(460+60*cos(theta),845+60*sin(theta));
-    }
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    for (int i =0; i < 360;i++)
-    {
-        float theta=0;
-        theta=i*3.142/180;
-        glColor3f(1.0,0.81,0.0);
-        glVertex2f(540+60*cos(theta),820+60*sin(theta));
-    }
-    glEnd();
-
-    glBegin(GL_POLYGON);
-     for (int i =0; i < 360;i++)
-    {
-        float theta=0;
-        theta=i*3.142/180;
-        glColor3f(1.0,0.81,0.0);
-        glVertex2f(380+60*cos(theta),910+60*sin(theta));
-    }
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    for (int i =0; i < 360;i++)
-    {
-        float theta=0;
-        theta=i*3.142/180;
-        glColor3f(1.0,0.81,0.0);
-        glVertex2f(460+60*cos(theta),950+60*sin(theta));
-    }
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    for (int i =0; i < 360;i++)
-    {
-        float theta=0;
-        theta=i*3.142/180;
-        glColor3f(1.0,0.81,0.0);
-        glVertex2f(540+60*cos(theta),910+60*sin(theta));
-    }
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    for (int i =0; i < 360;i++)
-    {
-        float theta=0;
-        theta=i*3.142/180;
-        glColor3f(1.0,0.81,0.0);
-        glVertex2f(350+60*cos(theta),860+60*sin(theta));
-    }
-    glEnd();
-
-    glBegin(GL_POLYGON);
-    for (int i =0; i < 360;i++)
-    {
-        float theta=0;
-        theta=i*3.142/180;
-        glColor3f(1.0,0.81,0.0);
-        glVertex2f(570+60*cos(theta),860+60*sin(theta));
-    }
-    glEnd();
-}
 
 glBegin(GL_POLYGON);
     glColor3f(0.8,0.8,0.8); //TOWER 1
@@ -571,13 +580,44 @@ glBegin(GL_POLYGON);
     glVertex2f(350,648);
     glEnd();
 }
-    glFlush();
+    glutSwapBuffers();
+}
+void timer(int)
+{
+   glutPostRedisplay();
+   glutTimerFunc(1000/1000,timer,0);
+
+   if(y11<=515)
+    y11+=0.15;
+   if(y2<=815)
+    y2+=0.15;
+   if(y3<=815)
+    y3+=0.15;
+   if(y41<=515)
+    y41+=0.15;
+
+    if(y21<=820)
+        y21+=0.33;
+    if(y22<=845)
+        y22+=0.33;
+    if(y23<=820)
+        y23+=0.33;
+    if(y24<=910)
+        y24+=0.33;
+    if(y25<=950)
+        y25+=0.33;
+    if(y26<=910)
+        y26+=0.33;
+    if(y27<=860)
+        y27+=0.33;
+    if(y28<=860)
+        y28+=0.33;
 }
 
 int main (int argc, char** argv)
 {
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DOUBLE);
 
     // giving window size in X- and Y- direction
     glutInitWindowSize(1366,648);
@@ -588,5 +628,6 @@ int main (int argc, char** argv)
     myInit();
 
     glutDisplayFunc(display);
+    glutTimerFunc(0,timer,0);
     glutMainLoop();
 }

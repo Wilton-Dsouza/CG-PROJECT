@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1589887110 source:c:\users\wenzil\documents\cg project\scene6\main.cpp
+1589738945 source:c:\users\wenzil\documents\ss lab\trial2\main.cpp
 	<stdio.h>
 	<GL/glut.h>
 	<math.h>
@@ -240,4 +240,14 @@
 
 1341006774 c:\program files (x86)\codeblocks\mingw\include\math.h
 	<_mingw.h>
+
+1589987908 source:c:\users\wenzil\documents\cg project\trial2\main.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<math.h>
+
+1589989163 source:c:\users\wenzil\documents\cg project\final project\main.cpp
+	<stdio.h>
+	<GL/glut.h>
+	<math.h>
 
