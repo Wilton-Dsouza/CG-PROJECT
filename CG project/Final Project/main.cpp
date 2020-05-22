@@ -3969,7 +3969,7 @@ void keys(unsigned char key, int x, int y)
         glutDisplayFunc(scene6);
         glutTimerFunc(0,timer6,0);
     }
-    else
+    else if (key=='x')
     {
         count++;
         glutDisplayFunc(enddisplay);
